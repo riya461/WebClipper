@@ -1,6 +1,6 @@
 body{
     min-width: 300px;
-    background-color: #433b3b;
+    background-color: #1e1c1c;
     color: rgb(224, 245, 220);
     font-family: 'Montserrat', sans-serif;
 }
@@ -8,11 +8,13 @@ body{
 .main{
     display: flex;
     flex-direction: column;
-    
 }
 
 .hding{
-    font-size: 200%;
+    font-size: 300%;
+    font-weight: bold;
+    text-align: center;
+    padding: 5% 0% 10% 0%;
 }
 
 .current{
@@ -21,4 +23,48 @@ body{
 
 .other{
     display: none;
+}
+
+#switch{
+    margin: 0;
+    border-color: #1e1c1c;
+    border-radius: 10px;
+    padding: 4px;
+    text-align: center;
+    transition: .5s;
+}
+
+#switch:hover{
+    cursor: pointer;
+    background-color: #4a4444;
+}
+
+#cp{
+    font-size: 150%;
+    margin-bottom: 0px;
+}
+
+#hr1{
+    margin-top: 0;
+    margin-bottom: 5%;
+}
+
+#hr2{
+    margin-top: 5%;
+}
+
+#bm{
+    padding: 5% 5% 5% 5%;
+    border-style: solid;
+    border-width: 6px;
+    border-radius: 10px;
+    border-color: #1e1c1c;
+    background-color: #4a4444;
+    text-align: center;
+    transition: .5s;
+}
+
+#bm:hover{
+    cursor: pointer;
+    font-size: 120%;
 }
