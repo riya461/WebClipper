@@ -1,14 +1,22 @@
-const swit1 = document.querySelector("#switch1");
-const swit2 = document.querySelector("#switch2")
-const curr = document.querySelector(".current");
-const othe = document.querySelector(".other");
+const swit = document.querySelectorAll("#switch")
+const curr = document.querySelector(".current")
+const othe = document.querySelector(".other")
+const boks = document.querySelectorAll("#bm")
+console.log(boks)
 
-swit1.onmousedown = function () {
-    curr.style.display = "none";
-    othe.style.display = "block";
+
+swit[0].onmousedown = function () {
+    curr.style.display = "none"
+    othe.style.display = "block"
 }
 
-swit2.onmousedown = function () {
+swit[1].onmousedown = function () {
     curr.style.display = "block"
     othe.style.display = "none"
 }
+
+// for (const item of boks){
+//     item.onmouseover = function(){
+//         item.style.cursor = "pointer"
+//     }
+// }
