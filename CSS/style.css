@@ -26,7 +26,17 @@ body{
 }
 
 #switch{
+    margin: 0;
+    border-color: #1e1c1c;
+    border-radius: 10px;
+    padding: 4px;
     text-align: center;
+    transition: .5s;
+}
+
+#switch:hover{
+    cursor: pointer;
+    background-color: #4a4444;
 }
 
 #cp{
@@ -51,5 +61,10 @@ body{
     border-color: #1e1c1c;
     background-color: #4a4444;
     text-align: center;
+    transition: .5s;
+}
+
+#bm:hover{
     cursor: pointer;
+    font-size: 120%;
 }
