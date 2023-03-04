@@ -8,6 +8,5 @@
     "icons":{
         
     },
-    "permissions": ["activeTab", "storage", "tabs"],
-    "host_permissions" : [""]
+    "permissions": ["activeTab", "storage", "tabs"]
 }
