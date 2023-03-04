@@ -8,11 +8,13 @@ body{
 .main{
     display: flex;
     flex-direction: column;
-    
 }
 
 .hding{
     font-size: 200%;
+    font-weight: bold;
+    text-align: center;
+    padding: 10% 0% 10% 0%;
 }
 
 .current{
@@ -21,4 +23,8 @@ body{
 
 .other{
     display: none;
+}
+
+#switch1, #switch2{
+    text-align: center;
 }
