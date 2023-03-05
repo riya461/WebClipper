@@ -1,8 +1,12 @@
 // import {addBookmark} from './background.js'
-let othbm = ["site 1","site 2","site 3"]
 var i=4
+let curbm = []
+let othbm = []
+var j = 1
+var k = 1
 
-const add = document.querySelector("#add")
+const addc = document.querySelector("#addc")
+const addo = document.querySelector("#addo")
 const bms = document.querySelector(".cbms")
 const swit = document.querySelectorAll("#switch")
 const curr = document.querySelector(".current")
@@ -30,27 +34,77 @@ swit[1].onmousedown = function () {
     othe.style.display = "none"
 }
 
-add.onmousedown = function(){
-    curbm.append("bookmark 4")
-    i++
-    const text = "<div id=\"book\">bookmark 4</div> <svg id=\"imag\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 448 512\"><path d=\"M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z\" /></svg>"
-    bms.innerHTML+= text
+// const bmref = document.querySelector("#bmref")
+// const divref = document.querySelector("#divref")
+// divref.id = "bm"
+
+
+// add.onmousedown = function () {
+//     curbm.push("bookmark "+i)
+//     bmrefcren
+//     console.log(bmref.children)
+//     const child1 = bmref.children[0]
+//     console.log(child1)
+//     child1.innerText = null
+//     child1.innerText+= curbm[i-1]
+//     const child2 = bmref.children[1]
+//     bms.appendChild(divref)
+//     const bmschildren = bms.children
+    
+//     bmschildren[bmschildren.length-1].appendChild(child1)
+//     bmschildren[bmschildren.length-1].appendChild(child2)
+
+//     i++
+// }
+
+for (var i=0; i<boks.length; i++){
+    boks[i].style.display="none"
 }
 
-for(var i=0; i<tra.length; i++){
+boks[0].style.display = "block"
+
+addc.onmousedown = function(){
+    curbm.push("bookmark "+j)
+    for(var i=0; i<3; i++){
+        if (boks[i].style.display == "none"){
+            const cren = boks[i].children
+            console.log(cren[0].innerText)
+            cren[0].innerText = "placeholder"
+            console.log(cren[0].innerText)
+            console.log(cren[0].id)
+            boks[i].style.display="block"
+            break
+        }
+    }
+}
+
+addo.onmousedown = function(){
+    //othbm.push("bookmark "+j)
+    for(var i=3; i<6; i++){
+        if (boks[i].style.display == "none"){
+            const cren = boks[i].children
+            cren[0].innerHTML = 'placeholder'
+            boks[i].style.display="block"
+            break
+        }
+    }
+}
+
+for (var i = 0; i < tra.length; i++) {
     const icon = tra[i]
-    icon.onclick = function(){
+    icon.onclick = function () {
         const par = icon.parentNode
-        par.innerHTML = null
+        // const chren = par.children
+        // chren[0].innerText = null
         par.style.display = "none"
         Gbg()
-    }    
+    }
 }
 
-function Gbg(){
+function Gbg() {
     const divs = document.querySelectorAll("div")
-    for (var j=0; j<divs.length; j++){
-        if (divs[j].innerText==null){
+    for (var j = 0; j < divs.length; j++) {
+        if (divs[j].innerText == null) {
             divs[j].remove
         }
     }
