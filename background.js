@@ -4,14 +4,21 @@ chrome.contextMenus.create({
     contexts: ['selection'] 
   });
 
-  function getText(){
+  
   chrome.contextMenus.onClicked.addListener(
     ({selectionText}) => {
         console.log(selectionText)
         getTextId(selectionText)
+        chrome.tabs.query({active: true, currentWindow:true}, tabs => {
+            let urlval = tabs[0].url;
+            console.log(urlval)
+
+
+
+        })
 
     }
-  ) }
+  ) 
 const url_vals = []
   chrome.contextMenus.onClicked.addListener(
     ({}) => {
@@ -21,6 +28,8 @@ const url_vals = []
             let urlval = tabs[0].url;
             console.log(urlval),
             url_vals.push(urlval)
+
+
             
             
         })
