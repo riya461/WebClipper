@@ -8,7 +8,7 @@ chrome.contextMenus.create({
   chrome.contextMenus.onClicked.addListener(
     ({selectionText}) => {
         console.log(selectionText)
-        getTextId(selectionText)
+        
         chrome.tabs.query({active: true, currentWindow:true}, tabs => {
             let urlval = tabs[0].url;
             console.log(urlval)
