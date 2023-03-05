@@ -8,8 +8,8 @@
     "icons":{
         
     },
-    "permissions": ["activeTab", "storage", "tabs"],
+    "permissions": ["activeTab", "storage", "tabs", "contextMenus", "bookmarks"],
     "background":{
-        "service_worker" : "contextBackground.js"
+        "service_worker" : "background.js"
     }
 }
