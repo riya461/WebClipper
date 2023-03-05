@@ -11,6 +11,7 @@ body{
 }
 
 .hding{
+    color: rgb(78, 173, 90);
     font-size: 300%;
     font-weight: bold;
     text-align: center;
@@ -31,6 +32,7 @@ body{
     border-radius: 10px;
     padding: 4px;
     text-align: center;
+    font-size: 120%;
     transition: .5s;
 }
 
@@ -39,9 +41,24 @@ body{
     background-color: #4a4444;
 }
 
+.top{
+    display: flex;
+    flex-direction: row;
+}
+
 #cp{
     font-size: 150%;
     margin-bottom: 0px;
+    flex: 8;
+}
+
+#add{
+    flex: 1;
+    font-size: 230%;
+}
+
+#add:hover{
+    cursor: pointer;
 }
 
 #hr1{
@@ -54,17 +71,38 @@ body{
 }
 
 #bm{
-    padding: 5% 5% 5% 5%;
+    display: flex;
+    flex-direction: row;
+    padding: 5% 5% 4% 5%;
     border-style: solid;
     border-width: 6px;
     border-radius: 10px;
     border-color: #1e1c1c;
     background-color: #4a4444;
+}
+
+svg{
+    width: 20px;
+    height: 20px;
+}
+
+#book{
+    flex: 5;
     text-align: center;
     transition: .5s;
 }
 
-#bm:hover{
+#book:hover{
     cursor: pointer;
-    font-size: 120%;
+    font-size: 115%;
+}
+
+#imag{
+    flex: 1;
+    transition: transform .5s;
+}
+
+#imag:hover{
+    cursor: pointer;
+    transform: scale(1.25);
 }

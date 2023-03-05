@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a10109277f.js" crossorigin="anonymous"></script>
     <title>Web Clipper</title>
 </head>
 
@@ -16,25 +17,67 @@
     <div class="main">
         <div class="hding">BOOKMARKS</div>
         <div class="current">
-            <div id="cp">CURRENT PAGE</div>
-            <hr width="48%" align="left" id="hr1">
-            <div class="bms">
-                <div id="bm">bookmark 1</div>
-                <div id="bm">bookmark 2</div>
-                <div id="bm">bookmark 3</div>
+            <div class="top">
+                <div id="cp">CURRENT PAGE</div>
+                <div id="add">+</div>
             </div>
-            <hr id="hr2">
+            <hr width="48%" align="left" color="#5FAC69" id="hr1">
+            <div class="cbms">
+                <div id="bm">
+                    <div id="book">bookmark 1</div>
+                    <svg id="imag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path
+                            d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z" />
+                    </svg>
+                </div>
+                <div id="bm">
+                    <div id="book">bookmark 2</div>
+                    <svg id="imag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path
+                            d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z" />
+                    </svg>
+                </div>
+                <div id="bm">
+                    <div id="book">bookmark 3</div>
+                    <svg id="imag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path
+                            d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z" />
+                    </svg>
+                </div>
+            </div>
+            <hr color="#5FAC69" id="hr2">
             <div id="switch">Other Bookmarks</div>
         </div>
         <div class="other">
-            <div id="cp">OTHER PAGES</div>
-            <hr width="43%" align="left" id="hr1">
-            <div class="bms2">
-                <div id="bm">bookmark 4</div>
-                <div id="bm">bookmark 5</div>
-                <div id="bm">bookmark 6</div>
+            <div class="top">
+                <div id="cp">OTHER PAGES</div>
+                <div id="add">+</div>
             </div>
-            <hr id="hr2">
+            <hr width="43%" align="left" color="#5FAC69" id="hr1">
+            <div>
+                <div id="bm">
+                    <div id="book">bookmark 4</div>
+                    <svg id="imag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path
+                            d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z" />
+                    </svg>
+                </div>
+                <div id="bm">
+                    <div id="book">bookmark 5</div>
+                    <svg id="imag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path
+                            d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z" />
+                    </svg>
+                </div>
+                <div id="bm">
+                    <div id="book">bookmark 6</div>
+                    <svg id="imag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path
+                            d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z" />
+                    </svg>
+                </div>
+            </div>
+            <hr color="#5FAC69" id="hr2">
             <div id="switch">Current Bookmarks</div>
         </div>
     </div>
@@ -43,5 +86,3 @@
 </body>
 
 </html>
-
-<!--    style="width: 1000px; display: none;"-->
