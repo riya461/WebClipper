@@ -27,9 +27,9 @@ This is a smart bookmarker that can be used to mark a specific part in a webisit
 - To add as many bookmarks as possible, currently only 3 can be added from a particular site and only 3 sites can be bookmarked at a time
 
 ## Demo Video
-<a href="https://youtu.be/74RrpcO89E0" target="_blank" rel="noopener">
-  <img src="https://user-images.githubusercontent.com/42115530/95742312-6c40e580-0cad-11eb-89a5-c2ee099bf8d7.png" alt="MLH-Quizzet"
-	title="MLH-Quizzet" width="400px" />
+<a href="" target="_blank" rel="noopener">
+  <img src="" alt="Extensionpage"
+	title="Extensionpage" width="400px" />
 </a>
 
 ## Technology Stack:
