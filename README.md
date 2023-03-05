@@ -28,7 +28,7 @@ This is a smart bookmarker that can be used to mark a specific part in a webisit
 
 ## Demo Video
 <a href="" target="_blank" rel="noopener">
-  <img src="" alt="Extensionpage"
+  <img src="https://github.com/riya461/WebClipper/blob/main" alt="Extensionpage"
 	title="Extensionpage" width="400px" />
 </a>
 
