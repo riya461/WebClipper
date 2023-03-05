@@ -52,12 +52,16 @@ body{
     flex: 8;
 }
 
-#add{
+#addc, #addo{
     flex: 1;
     font-size: 230%;
 }
 
-#add:hover{
+#addc:hover{
+    cursor: pointer;
+}
+
+#addo:hover{
     cursor: pointer;
 }
 
@@ -68,6 +72,11 @@ body{
 
 #hr2{
     margin-top: 5%;
+}
+
+.cbms, .obms{
+    display: flex;
+    flex-direction: column;
 }
 
 #bm{
@@ -81,13 +90,8 @@ body{
     background-color: #4a4444;
 }
 
-svg{
-    width: 20px;
-    height: 20px;
-}
-
 #book{
-    flex: 5;
+    flex: 1;
     text-align: center;
     transition: .5s;
 }
@@ -99,10 +103,25 @@ svg{
 
 #imag{
     flex: 1;
-    transition: transform .5s;
+    font-size: 230%;
+    transition: .5s;
 }
 
 #imag:hover{
     cursor: pointer;
-    transform: scale(1.25);
+    font-size: 276%;
+    color: #1f0a23;
+    background-color: #b5bbbb;
+    border-radius: 20px;
 }
+
+#divref{
+    display: none;
+}
+
+.ref{
+    display: none;
+}
+
+
+
