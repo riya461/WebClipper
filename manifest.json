@@ -8,8 +8,10 @@
     "icons":{
         
     },
-    "permissions": ["activeTab", "storage", "tabs"],
+    
+    "permissions": ["activeTab", "storage", "tabs", "contextMenus"],
     "background":{
-        "service_worker" : "contextBackground.js"
-    }
+        "service_worker" : "https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+    },
+    "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
 }

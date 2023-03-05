@@ -10,9 +10,10 @@ const bm1 = document.querySelector("bm1")
 //     other.display = "block";
 // }
 
-hdin.onclick = function(){
-    current.style.display = "block";
-}
+// hdin.onclick = function(){
+//     current.style.display = "block";
+    
+// }
 
 hdin.onclick = function(){
     bm1.innerText = "work aavada"
