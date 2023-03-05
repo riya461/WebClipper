@@ -27,11 +27,12 @@ This is a smart bookmarker that can be used to mark a specific part in a webisit
 - To add as many bookmarks as possible, currently only 3 can be added from a particular site and only 3 sites can be bookmarked at a time
 
 ## Demo Video
-<a href="" target="_blank" rel="noopener">
-  <img src="https://github.com/riya461/WebClipper/blob/main" alt="Extensionpage"
-	title="Extensionpage" width="400px" />
+<a href="https://www.loom.com/share/4b5ac808cb824ead874c931b9e0b6660" target="_blank" rel="noopener">
+  <img src="https://github.com/riya461/WebClipper/blob/main" alt="Demo link"
+	title="Demo link" width="400px" />
 </a>
 
+![image](https://user-images.githubusercontent.com/97732983/222959543-fdea9e18-0e21-4b57-b576-1b7c3b9cf66b.png)
 ## Technology Stack:
 
 
