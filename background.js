@@ -1,18 +1,39 @@
-console.log("hello")
 chrome.contextMenus.create({
-    id: 'clipId',
+    id: 'clip',
     title: 'WebClip this',
-    contexts: ['selection'], // show the menu item on the page and selected text
+    contexts: ['selection'] 
   });
 
+  
   chrome.contextMenus.onClicked.addListener(
-    ({selectionText, linkUrl}) => {
-      console.log("Inside")
-      console.log(selectionText)
-      findText(selectionText)
-      });
+    ({selectionText}) => {
+        console.log(selectionText)
+        getTextId(selectionText)
+        chrome.tabs.query({active: true, currentWindow:true}, tabs => {
+            let urlval = tabs[0].url;
+            console.log(urlval)
 
-  function findText(selTxt)
-  {
-    console.log($(document).body)
-  }
+
+
+        })
+
+    }
+  ) 
+const url_vals = []
+  chrome.contextMenus.onClicked.addListener(
+    ({}) => {
+        console.log("In the context menu")
+        
+        chrome.tabs.query({active: true, currentWindow:true}, tabs => {
+            let urlval = tabs[0].url;
+            console.log(urlval),
+            url_vals.push(urlval)
+
+
+            
+            
+        })
+        console.log(url_vals)
+       
+  });
+  
