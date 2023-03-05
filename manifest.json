@@ -8,18 +8,8 @@
     "icons":{
         
     },
-<<<<<<< HEAD
-    
-    "permissions": ["activeTab", "storage", "tabs", "contextMenus"],
-    "background":{
-        "service_worker" : "https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"
-    },
-    "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
-}
-=======
     "permissions": ["activeTab", "storage", "tabs", "contextMenus", "bookmarks"],
     "background":{
         "service_worker" : "background.js"
     }
 }
->>>>>>> 2836335229f581a37e0dbbec7608d3f524c7c6a2
