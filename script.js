@@ -50,7 +50,7 @@ for (var i=0; i<boks.length; i++){
     boks[i].style.display="none"
 }
 
-boks[0].style.display = "block"
+// boks[0].style.display = "block"
 
 addc.onmousedown = function(){
     curbm.push("bookmark "+j)
