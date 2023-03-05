@@ -74,6 +74,11 @@ body{
     margin-top: 5%;
 }
 
+.cbms, .obms{
+    display: flex;
+    flex-direction: column;
+}
+
 #bm{
     display: flex;
     flex-direction: row;
@@ -86,7 +91,7 @@ body{
 }
 
 #book{
-    flex: 3;
+    flex: 1;
     text-align: center;
     transition: .5s;
 }
@@ -105,6 +110,9 @@ body{
 #imag:hover{
     cursor: pointer;
     font-size: 276%;
+    color: #1f0a23;
+    background-color: #b5bbbb;
+    border-radius: 20px;
 }
 
 #divref{
