@@ -1,4 +1,4 @@
-let curbm = ["bookmark 1","bookmark 2","bookmark 3"]
+// import {addBookmark} from './background.js'
 let othbm = ["site 1","site 2","site 3"]
 var i=4
 
@@ -9,7 +9,16 @@ const curr = document.querySelector(".current")
 const othe = document.querySelector(".other")
 const boks = document.querySelectorAll("#bm")
 const tra = document.querySelectorAll("#imag")
+// const bmark = document.querySelectorAll("#book")
 
+// bmark.onclick (() => {
+//     const val = addBookmark();
+//     const placeholder = document.getElementsByClassName("1")
+//     placeholder.innerHTML = ''
+//     const para = document.createElement("p");
+//     para.innerText = val;
+//     document.body.appendChild(para);
+// })
 
 swit[0].onmousedown = function () {
     curr.style.display = "none"
@@ -46,3 +55,4 @@ function Gbg(){
         }
     }
 }
+
