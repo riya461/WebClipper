@@ -63,17 +63,13 @@ for (var i=0; i<boks.length; i++){
     boks[i].style.display="none"
 }
 
-boks[0].style.display = "block"
 
 addc.onmousedown = function(){
     curbm.push("bookmark "+j)
     for(var i=0; i<3; i++){
         if (boks[i].style.display == "none"){
             const cren = boks[i].children
-            console.log(cren[0].innerText)
             cren[0].innerText = "placeholder"
-            console.log(cren[0].innerText)
-            console.log(cren[0].id)
             boks[i].style.display="block"
             break
         }
