@@ -18,6 +18,16 @@ body{
     padding: 5% 0% 10% 0%;
 }
 
+@keyframes fadeIn {
+    from{display: none;}
+    to{display: block;}
+}
+
+@keyframes fadeOut {
+    from{display: block;}
+    to{display: none;}
+}
+
 .current{
     display: block;
 }
@@ -74,15 +84,11 @@ body{
     margin-top: 5%;
 }
 
-/* .cbms, .obms{
-    display: flex;
-    flex-direction: column;
-} */
-
 #bm{
-    display: flex;
-    /* flex-direction: row; */
-    padding: 5% 5% 4% 5%;
+    /* display: flex;
+    flex-direction: row; */
+    /* margin: 5% 5% 10% 5%; */
+    padding: 5% 5% 10% 5%;
     border-style: solid;
     border-width: 6px;
     border-radius: 10px;
@@ -91,14 +97,14 @@ body{
 }
 
 #book{
-    flex: 5;
-    /* margin-right: 0; */
+    /* flex: 1; */
+    width: 60%;
+    float: left;
     background-color: rgb(78, 173, 90);
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     border-radius: 10px;
     text-align: center;
     transition: .5s;
-    /* width: fit-content; */
 }
 
 #book:hover{
@@ -113,12 +119,14 @@ body{
 } */
 
 #imag{
-    flex: 1;
+    /* flex: 1; */
+    width: 20%;
+    /* height: 100%; */
+    float: right;
     text-align: center;
     border-radius: 10px;
     transition: .5s;
     background-color: #c13737;
-    /* width: fit-content; */
 }
 
 #imag:hover{

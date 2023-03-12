@@ -57,11 +57,13 @@ swit[1].onmousedown = function () {
 //     i++
 // }
 
+
+
 for (var i=0; i<boks.length; i++){
     boks[i].style.display="none"
 }
 
-// boks[0].style.display = "block"
+boks[0].style.display = "block"
 
 addc.onmousedown = function(){
     curbm.push("bookmark "+j)
@@ -79,7 +81,6 @@ addc.onmousedown = function(){
 }
 
 addo.onmousedown = function(){
-    //othbm.push("bookmark "+j)
     for(var i=3; i<6; i++){
         if (boks[i].style.display == "none"){
             const cren = boks[i].children
@@ -94,8 +95,6 @@ for (var i = 0; i < tra.length; i++) {
     const icon = tra[i]
     icon.onclick = function () {
         const par = icon.parentNode
-        // const chren = par.children
-        // chren[0].innerText = null
         par.style.display = "none"
         Gbg()
     }
