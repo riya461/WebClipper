@@ -1,3 +1,5 @@
+// import {addBookmark} from './background.js'
+var i=4
 let curbm = []
 let othbm = []
 var j = 1
@@ -11,7 +13,16 @@ const curr = document.querySelector(".current")
 const othe = document.querySelector(".other")
 const boks = document.querySelectorAll("#bm")
 const tra = document.querySelectorAll("#imag")
+// const bmark = document.querySelectorAll("#book")
 
+// bmark.onclick (() => {
+//     const val = addBookmark();
+//     const placeholder = document.getElementsByClassName("1")
+//     placeholder.innerHTML = ''
+//     const para = document.createElement("p");
+//     para.innerText = val;
+//     document.body.appendChild(para);
+// })
 
 swit[0].onmousedown = function () {
     curr.style.display = "none"
@@ -93,3 +104,4 @@ function Gbg() {
         }
     }
 }
+
