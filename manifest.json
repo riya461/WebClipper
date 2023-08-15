@@ -8,7 +8,7 @@
     "icons":{
         
     },
-    "permissions": ["activeTab", "storage", "tabs", "contextMenus", "bookmarks"],
+    "permissions": ["contextMenus","storage", "activeTab","tabs","scripting","webRequest"],
     "background":{
         "service_worker" : "background.js"
     },
