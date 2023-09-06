@@ -1,64 +1,62 @@
 chrome.contextMenus.create({
-    id: 'clip-off',
+    id: 'clip-off-menu',
     title: 'WebClip this',
     contexts: ['selection'] 
   });
 
 
-async function getCurrentTab() {
+async function getCurrentTabval() {
     let queryOptions = { active: true, lastFocusedWindow: true };
     
     let [tab] = await chrome.tabs.query(queryOptions);
     console.log("Tab taken: ",tab.url);
     return tab.url;
   }
-let current_bookmarks = [];
+let current_bookmark = [];
 
-
-
-
-  
 
 const fetchBookmarks = async () => {
-  const currentBlog = await getCurrentTab();
+  const currentBlog = await getCurrentTabval();
   return new Promise((resolve)=>{
     chrome.storage.sync.get([currentBlog],(obj)=>{
       resolve(obj[currentBlog]? JSON.parse(obj[currentBlog]):[]);
     })
   })
 }
-const newBlogLoaded = async () =>{
-  current_bookmarks = await fetchBookmarks();
+
+chrome.tabs.onActivated.addListener( async () =>{
+  current_bookmark = await fetchBookmarks()
 }
-chrome.tabs.onActivated.addListener(
-  newBlogLoaded(),
+
 
 )
 chrome.contextMenus.onClicked.addListener(
     ({selectionText}) => {
-      newBlogLoaded();
       addBookMarkEventHandler(selectionText);
       
         })
 
 const addBookMarkEventHandler = async (selectionText) =>{
-  const currentBlog = await getCurrentTab();
+  const currentBlog = await getCurrentTabval();
   const newBookmark = {
     
     text: selectionText,
     desc: selectionText.split('.')[0].split(' ').slice(0,3).join(' '),
     iddel: selectionText.split('.')[0].split(' ').slice(0,3).join('-'),
-    url: currentBlog
+    url: currentBlog,
+    valf: "true"
   }
   console.log("BookmarKs :",newBookmark);
+  current_bookmark = await fetchBookmarks();
 
-  console.log("current bookmark: ",current_bookmarks)
+
+  console.log("current bookmark: ",current_bookmark)
   chrome.storage.sync.set({
-    [currentBlog]:JSON.stringify([...current_bookmarks,newBookmark])
+    [currentBlog]:JSON.stringify([...current_bookmark,newBookmark])
 
   })
-  current_bookmarks = await fetchBookmarks();
-  console.log("current bookmark: ",current_bookmarks)
+  current_bookmark = await fetchBookmarks();
+  console.log("current bookmark: ",current_bookmark)
 
 }
  
