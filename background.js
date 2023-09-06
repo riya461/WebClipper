@@ -10,10 +10,10 @@ let currentBlog = "";
 chrome.tabs.onUpdated.addListener((tabId,tab) =>{
     currentBlog=JSON.stringify(tabId);
     console.log(currentBlog);
-  //   chrome.tabs.sendMessage(tabId,{
-  //     type: "NEW",
-  //     blogId: tabId,
-  // })
+    chrome.tabs.sendMessage(tabId,{
+      type: "NEW",
+      blogId: tabId,
+  })
   newBlogLoaded();
  
   });
@@ -35,15 +35,14 @@ const newBlogLoaded = async () =>{
 
       addBookMarkEventHandler(selectionText);
       
-        
-
         })
 
 const addBookMarkEventHandler = async (selectionText) =>{
   const newBookmark = {
     
     text: selectionText,
-    desc: selectionText.split('.')[0]
+    desc: selectionText.split('.')[0],
+    iddel: selectionText.split('.')[0].split(' ')[0].concat(selectionText.split('.')[0].split(' ')[1].concat(selectionText.split('.')[0].split(' ')[2]))
   }
   console.log(newBookmark);
 
@@ -55,6 +54,5 @@ const addBookMarkEventHandler = async (selectionText) =>{
   current_bookmarks = await fetchBookmarks();
   console.log(current_bookmarks)
 
-  // mapping to chrome storage 
 }
  

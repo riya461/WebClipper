@@ -15,11 +15,11 @@ const addNewBookmark = (bookmarksElement,bookmark) =>{
     newBookMark.className="bm";
     newBookMark.id="bm-"+ bookmark.desc;
 
-    const bookMarkTitle = newBookMark.appendChild(document.createElement('div'));
+    const bookMarkTitle = document.createElement('div');
     bookMarkTitle.textContent = bookmark.desc;
     bookMarkTitle.className="book";
 
-    const controlsElement = newBookMark.appendChild(document.createElement('div'));
+    const controlsElement = document.createElement('div');
     controlsElement.textContent ="-";
     controlsElement.className="imag";
 
@@ -29,6 +29,8 @@ const addNewBookmark = (bookmarksElement,bookmark) =>{
 
     // setBookmarkAttributes("delete",onDelete,controlsElement);
 
+    newBookMark.appendChild(bookMarkTitle);
+    newBookMark.appendChild(controlsElement);
     bookmarksElement.appendChild(newBookMark);
 
 
@@ -54,12 +56,12 @@ const viewBookmarks = (current_bookmarks=[])=>{
 const onDelete = async e =>{
     
     const activeTab = await getCurrentTab();
-    const idval = e.target.parentNode.parentNode.getAttribute("desc");
-    const bookmarksElementDel = document.getElementById("bookmark-"+ idval);
+    const idval = e.target.parentNode.parentNode.getAttribute("iddel");
+    const bookmarksElementDel = document.getElementById("bm-"+ idval);
 
     bookmarksElementDel.parentNode.removeChild(bookmarksElementDel);
 
-    chrome.tabs.sendMessage(activeTab.id, {
+    chrome.tabs.sendMessage(activeTab, {
         type: "DELETE",
         value: idval,
       }, viewBookmarks);
