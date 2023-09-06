@@ -1,5 +1,5 @@
 chrome.contextMenus.create({
-    id: 'webclipping',
+    id: 'clip-off',
     title: 'WebClip this',
     contexts: ['selection'] 
   });
@@ -9,26 +9,18 @@ async function getCurrentTab() {
     let queryOptions = { active: true, lastFocusedWindow: true };
     
     let [tab] = await chrome.tabs.query(queryOptions);
-    console.log(tab);
+    console.log("Tab taken: ",tab.url);
     return tab.url;
   }
 let current_bookmarks = [];
 
-let currentBlog = "";
-// chrome.tabs.onUpdated.addListener((tabId,tab) =>{
-//     currentBlog=JSON.stringify(tabId);
-//     console.log(currentBlog);
-//     chrome.tabs.sendMessage(tabId,{
-//       type: "NEW",
-//       blogId: tab.url,
-//   });
-//   // newBlogLoaded();
- 
-//   });
+
+
 
   
 
-const fetchBookmarks = () => {
+const fetchBookmarks = async () => {
+  const currentBlog = await getCurrentTab();
   return new Promise((resolve)=>{
     chrome.storage.sync.get([currentBlog],(obj)=>{
       resolve(obj[currentBlog]? JSON.parse(obj[currentBlog]):[]);
@@ -38,9 +30,13 @@ const fetchBookmarks = () => {
 const newBlogLoaded = async () =>{
   current_bookmarks = await fetchBookmarks();
 }
-  chrome.contextMenus.onClicked.addListener(
-    ({selectionText}) => {
+chrome.tabs.onActivated.addListener(
+  newBlogLoaded(),
 
+)
+chrome.contextMenus.onClicked.addListener(
+    ({selectionText}) => {
+      newBlogLoaded();
       addBookMarkEventHandler(selectionText);
       
         })
@@ -50,19 +46,19 @@ const addBookMarkEventHandler = async (selectionText) =>{
   const newBookmark = {
     
     text: selectionText,
-    desc: selectionText.split('.')[0],
-    iddel: selectionText.split('.')[0].split(' ').slice(0,3).join(''),
+    desc: selectionText.split('.')[0].split(' ').slice(0,3).join(' '),
+    iddel: selectionText.split('.')[0].split(' ').slice(0,3).join('-'),
     url: currentBlog
   }
-  console.log(newBookmark);
+  console.log("BookmarKs :",newBookmark);
 
-  console.log(current_bookmarks)
+  console.log("current bookmark: ",current_bookmarks)
   chrome.storage.sync.set({
     [currentBlog]:JSON.stringify([...current_bookmarks,newBookmark])
 
   })
   current_bookmarks = await fetchBookmarks();
-  console.log(current_bookmarks)
+  console.log("current bookmark: ",current_bookmarks)
 
 }
  
