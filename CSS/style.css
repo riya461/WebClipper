@@ -31,7 +31,7 @@ body{
 .current{
     display: block;
 }
-
+/* 
 .other{
     display: none;
 }
@@ -49,31 +49,31 @@ body{
 #switch:hover{
     cursor: pointer;
     background-color: #4a4444;
-}
+} */
 
 .top{
     display: flex;
     flex-direction: row;
 }
 
-#cp{
+.cp{
     font-size: 150%;
     margin-bottom: 0px;
     flex: 8;
 }
 
-#addc, #addo{
+/* #addc, #addo{
     flex: 1;
     font-size: 230%;
-}
+} */
 
-#addc:hover{
+/* #addc:hover{
     cursor: pointer;
 }
 
 #addo:hover{
     cursor: pointer;
-}
+} */
 
 #hr1{
     margin-top: 0;
@@ -84,7 +84,7 @@ body{
     margin-top: 5%;
 }
 
-#bm{
+.bm{
     margin: 0% 0% 3% 0%;
     padding: 0% 0% 10% 0%;
     border-style: solid;
@@ -95,7 +95,7 @@ body{
     transition: .5s;
 }
 
-#book, .book{
+.book{
     /* padding: 2% 0% 2% 0%; */
     width: 80%;
     float: left;
@@ -105,7 +105,7 @@ body{
     transition: .5s;
 }
 
-#book:hover{
+.book:hover{
     cursor: pointer;
     /* font-size: 220%; */
     color: #1e1c1c;
@@ -113,7 +113,7 @@ body{
     background-color: #bbb5b5;
 }
 
-#imag{
+.imag{
     /* margin: -5% 0% -20% 0%; */
     width: 20%;
     float: right;
@@ -124,7 +124,7 @@ body{
     background-color: #c13737;
 }
 
-#imag:hover{
+.imag:hover{
     cursor: pointer;
     /* transform: scale(1.3); */
     /* font-size: 220%; */

@@ -1,42 +1,60 @@
 chrome.contextMenus.create({
-    id: 'clip',
+    id: 'webclipping ',
     title: 'WebClip this',
     contexts: ['selection'] 
   });
 
-let urls_val = [];
-let texts = []
+let current_bookmarks = [];
+
+let currentBlog = "";
+chrome.tabs.onUpdated.addListener((tabId,tab) =>{
+    currentBlog=JSON.stringify(tabId);
+    console.log(currentBlog);
+  //   chrome.tabs.sendMessage(tabId,{
+  //     type: "NEW",
+  //     blogId: tabId,
+  // })
+  newBlogLoaded();
+ 
+  });
+
+  
+
+const fetchBookmarks = () => {
+  return new Promise((resolve)=>{
+    chrome.storage.sync.get([currentBlog],(obj)=>{
+      resolve(obj[currentBlog]? JSON.parse(obj[currentBlog]):[]);
+    })
+  })
+}
+const newBlogLoaded = async () =>{
+  current_bookmarks = await fetchBookmarks();
+}
   chrome.contextMenus.onClicked.addListener(
     ({selectionText}) => {
-        console.log("Text selected: " + selectionText)
+
+      addBookMarkEventHandler(selectionText);
+      
         
-        chrome.tabs.query({active: true, currentWindow:true}, tabs => {
-            let urlval = JSON.stringify(tabs[0].url);
-            console.log("The current url " + urlval)
-            urls_val.push(urlval);
-            texts.push(selectionText)
-            console.log(texts)
-            console.log("the value in the pgm " );
-            console.log(urls_val)
-
-                const arr = JSON.stringify(texts);
-                chrome.storage.local.set({ urltexts: arr }).then(() => {
-                  console.log("Value is set");
-                });
-                chrome.storage.local.get(["urltexts"]).then((result) => {
-                  var obj = JSON.parse(result.urltexts); 
-                  console.log("Value currently is " + obj);
-                });
-            
-
-
-
-            
-
 
         })
 
-    }
-  ) 
+const addBookMarkEventHandler = async (selectionText) =>{
+  const newBookmark = {
+    
+    text: selectionText,
+    desc: selectionText.split('.')[0]
+  }
+  console.log(newBookmark);
 
-  
+  console.log(current_bookmarks)
+  chrome.storage.sync.set({
+    [currentBlog]:JSON.stringify([...current_bookmarks,newBookmark])
+
+  })
+  current_bookmarks = await fetchBookmarks();
+  console.log(current_bookmarks)
+
+  // mapping to chrome storage 
+}
+ 
