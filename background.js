@@ -1,22 +1,30 @@
 chrome.contextMenus.create({
-    id: 'webclipping ',
+    id: 'webclipping',
     title: 'WebClip this',
     contexts: ['selection'] 
   });
 
+
+async function getCurrentTab() {
+    let queryOptions = { active: true, lastFocusedWindow: true };
+    
+    let [tab] = await chrome.tabs.query(queryOptions);
+    console.log(tab);
+    return tab.url;
+  }
 let current_bookmarks = [];
 
 let currentBlog = "";
-chrome.tabs.onUpdated.addListener((tabId,tab) =>{
-    currentBlog=JSON.stringify(tabId);
-    console.log(currentBlog);
-    chrome.tabs.sendMessage(tabId,{
-      type: "NEW",
-      blogId: tabId,
-  })
-  newBlogLoaded();
+// chrome.tabs.onUpdated.addListener((tabId,tab) =>{
+//     currentBlog=JSON.stringify(tabId);
+//     console.log(currentBlog);
+//     chrome.tabs.sendMessage(tabId,{
+//       type: "NEW",
+//       blogId: tab.url,
+//   });
+//   // newBlogLoaded();
  
-  });
+//   });
 
   
 
@@ -38,11 +46,13 @@ const newBlogLoaded = async () =>{
         })
 
 const addBookMarkEventHandler = async (selectionText) =>{
+  const currentBlog = await getCurrentTab();
   const newBookmark = {
     
     text: selectionText,
     desc: selectionText.split('.')[0],
-    iddel: selectionText.split('.')[0].split(' ')[0].concat(selectionText.split('.')[0].split(' ')[1].concat(selectionText.split('.')[0].split(' ')[2]))
+    iddel: selectionText.split('.')[0].split(' ').slice(0,3).join(''),
+    url: currentBlog
   }
   console.log(newBookmark);
 

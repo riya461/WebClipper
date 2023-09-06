@@ -3,7 +3,7 @@ async function getCurrentTab() {
     let queryOptions = { active: true, lastFocusedWindow: true };
     
     let [tab] = await chrome.tabs.query(queryOptions);
-    return tab.id;
+    return tab.url;
   }
 const addNewBookmark = (bookmarksElement,bookmark) =>{
 
@@ -53,21 +53,21 @@ const viewBookmarks = (current_bookmarks=[])=>{
     return;
 }
 
-const onDelete = async e =>{
+// const onDelete = async e =>{
     
-    const activeTab = await getCurrentTab();
-    const idval = e.target.parentNode.parentNode.getAttribute("iddel");
-    const bookmarksElementDel = document.getElementById("bm-"+ idval);
+//     const activeTab = await getCurrentTab();
+//     const idval = e.target.parentNode.parentNode.getAttribute("iddel");
+//     const bookmarksElementDel = document.getElementById("bm-"+ idval);
 
-    bookmarksElementDel.parentNode.removeChild(bookmarksElementDel);
+//     bookmarksElementDel.parentNode.removeChild(bookmarksElementDel);
 
-    chrome.tabs.sendMessage(activeTab, {
-        type: "DELETE",
-        value: idval,
-      }, viewBookmarks);
+//     chrome.tabs.sendMessage(activeTab, {
+//         type: "DELETE",
+//         value: idval,
+//       }, viewBookmarks);
     
 
-};
+// };
 
 // const setBookmarkAttributes = (src,eventListener, controlParentElement)=>{
 //     const controlsElement = document.createElement("img");
